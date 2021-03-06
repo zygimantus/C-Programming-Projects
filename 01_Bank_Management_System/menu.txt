@@ -1,0 +1,8 @@
+
+        Bank Management System
+
+1. Create a new account
+2. Show account information
+3. Remove an account
+0. Exit
+

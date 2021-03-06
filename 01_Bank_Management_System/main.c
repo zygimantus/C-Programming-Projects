@@ -1,4 +1,5 @@
-#include "stdio.h"
+#include <stdio.h>
+#include "../libs/menu.h"
 
 struct account
 {
@@ -7,7 +8,6 @@ struct account
     int deposit;
 };
 
-void printMenu();
 void createAccount(struct account *my_account);
 void showAccount(struct account *my_account);
 void removeAccount(struct account *my_account);
@@ -16,6 +16,8 @@ int main(int argc, char *argv[])
 {
     int sel = 0;
     struct account *my_account;
+
+    readMenuFile("menu.txt");
 
     do {
         printMenu();
@@ -40,16 +42,6 @@ int main(int argc, char *argv[])
     } while (sel != 0);
 
     return 0;
-}
-
-void printMenu()
-{
-    printf("\n\t\tBank Management System\n\n");
-
-    printf("1. Create a new account\n");
-    printf("2. Show account information\n");
-    printf("3. Remove an account\n");
-    printf("0. Exit\n\n");
 }
 
 void createAccount(struct account *my_account)
